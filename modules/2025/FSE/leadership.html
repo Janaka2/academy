@@ -87,30 +87,63 @@
     nothing too serious, simply a playful distraction to put a smile on your
     face. Press the spacebar or tap/click inside the game area to jump.
 </p>
-<div id="gameContainer">
+<!-- Game area -->
+<div id="gameContainer" style="display: none;">
     <div id="player"></div>
 </div>
-<div id="score">Score: 0</div>
-<div id="instructions">Press spacebar or tap/click to jump</div>
+<!-- Score and instructions -->
+<div id="score" style="display: none;">Score: 0</div>
+<div id="instructions" style="display: none;">Press spacebar or tap/click to jump</div>
+<!-- Start screen -->
+<div id="startScreen">
+    <button id="startButton" style="padding: 0.8rem 1.6rem; font-size: 1rem; border: none; border-radius: 8px; background-color: #42a5f5; color: #fff; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">Start Game</button>
+</div>
+<!-- Result screen -->
+<div id="resultScreen" style="display: none; flex-direction: column; align-items: center;">
+    <h2 style="margin-bottom: 0.5rem;">Game Over!</h2>
+    <p id="finalScore" style="margin-bottom: 1rem;"></p>
+    <div>
+        <button id="playAgainButton" style="margin-right: 0.5rem; padding: 0.6rem 1.2rem; font-size: 1rem; border: none; border-radius: 8px; background-color: #66bb6a; color: #fff; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">Play Again</button>
+        <a id="backButton" href="#" style="padding: 0.6rem 1.2rem; font-size: 1rem; border-radius: 8px; background-color: #ef5350; color: #fff; text-decoration: none; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">Go Back</a>
+    </div>
+</div>
 
 <script>
     /*
-      Simple endless runner game.
+      Simple endless runner game with start and result screens.
       The player jumps over moving obstacles. Score increases
-      over time. When the player hits an obstacle, the game resets.
+      over time. When the player hits an obstacle, a result panel
+      is displayed instead of using alert boxes.
     */
     const gameContainer = document.getElementById('gameContainer');
     const player = document.getElementById('player');
+    const scoreDisplay = document.getElementById('score');
+    const instructions = document.getElementById('instructions');
+    const startScreen = document.getElementById('startScreen');
+    const startButton = document.getElementById('startButton');
+    const resultScreen = document.getElementById('resultScreen');
+    const finalScoreEl = document.getElementById('finalScore');
+    const playAgainButton = document.getElementById('playAgainButton');
+
     let obstacles = [];
     let isJumping = false;
     let jumpVelocity = 0;
-    let gravity = 0.6;
+    const gravity = 0.6;
     let playerY = 0;
     let score = 0;
     let gameLoopInterval;
     let obstacleInterval;
+    let gameActive = false;
 
     function startGame() {
+      gameActive = true;
+      // Show game elements
+      gameContainer.style.display = 'block';
+      scoreDisplay.style.display = 'block';
+      instructions.style.display = 'block';
+      // Hide start and result screens
+      startScreen.style.display = 'none';
+      resultScreen.style.display = 'none';
       // Reset state
       obstacles.forEach((o) => gameContainer.removeChild(o));
       obstacles = [];
@@ -119,7 +152,7 @@
       playerY = 0;
       score = 0;
       player.style.bottom = '0px';
-      document.getElementById('score').innerText = 'Score: 0';
+      scoreDisplay.innerText = 'Score: 0';
       clearInterval(gameLoopInterval);
       clearInterval(obstacleInterval);
       gameLoopInterval = setInterval(gameLoop, 20);
@@ -129,7 +162,6 @@
     function createObstacle() {
       const obs = document.createElement('div');
       obs.classList.add('obstacle');
-      // Random width/height between 20 and 40 px
       const size = 20 + Math.random() * 20;
       obs.style.width = size + 'px';
       obs.style.height = size + 'px';
@@ -139,7 +171,7 @@
     }
 
     function jump() {
-      // Only jump if on the ground
+      if (!gameActive) return;
       if (!isJumping && playerY === 0) {
         isJumping = true;
         jumpVelocity = 11;
@@ -147,7 +179,7 @@
     }
 
     function gameLoop() {
-      // Handle jumping physics
+      // Player jump physics
       if (isJumping) {
         playerY += jumpVelocity;
         jumpVelocity -= gravity;
@@ -157,22 +189,19 @@
         }
         player.style.bottom = playerY + 'px';
       }
-      // Move obstacles and detect collisions
+      // Move obstacles and check for collisions
       for (let i = 0; i < obstacles.length; i++) {
         const obs = obstacles[i];
         const currentRight = parseFloat(obs.style.right);
         obs.style.right = currentRight + 4 + 'px';
-        // Remove when out of bounds
         if (currentRight > gameContainer.offsetWidth + 50) {
           gameContainer.removeChild(obs);
           obstacles.splice(i, 1);
           i--;
           continue;
         }
-        // Collision detection
         const playerRect = player.getBoundingClientRect();
         const obsRect = obs.getBoundingClientRect();
-        // Adjust for page scroll by using boundingRect
         if (
           playerRect.right > obsRect.left &&
           playerRect.left < obsRect.right &&
@@ -183,33 +212,29 @@
           return;
         }
       }
-      // Update score
       score++;
-      document.getElementById('score').innerText = 'Score: ' + score;
+      scoreDisplay.innerText = 'Score: ' + score;
     }
 
     function endGame() {
+      gameActive = false;
       clearInterval(gameLoopInterval);
       clearInterval(obstacleInterval);
-      setTimeout(() => {
-        const restart = confirm(
-          'Game over! Your score was ' +
-            score +
-            '. Would you like to play again?'
-        );
-        if (restart) {
-          startGame();
-        }
-      }, 100);
+      // Hide game area elements
+      gameContainer.style.display = 'none';
+      scoreDisplay.style.display = 'none';
+      instructions.style.display = 'none';
+      // Show result screen with score
+      finalScoreEl.innerText = 'Your score: ' + score;
+      resultScreen.style.display = 'flex';
     }
 
-    // Controls
+    // Event listeners
     document.addEventListener('keydown', (e) => {
       if (e.code === 'Space') {
         jump();
       }
     });
-    // Click or tap inside the game to jump
     gameContainer.addEventListener('click', () => {
       jump();
     });
@@ -217,9 +242,15 @@
       e.preventDefault();
       jump();
     });
+    startButton.addEventListener('click', () => {
+      startGame();
+    });
+    playAgainButton.addEventListener('click', () => {
+      startGame();
+    });
 
-    // Start on load
-    startGame();
+    // Optional: Set backButton href to your desired location
+    // backButton href is set in HTML; you can modify its attribute there.
 </script>
 </body>
 </html>

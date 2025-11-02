@@ -1,114 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Janaka Academy &ndash; Coming Soon</title>
-    <style>
-        /* Simple reset and typography */
-        body {
-          margin: 0;
-          padding: 0;
-          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          min-height: 100vh;
-          background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
-          color: #333;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Janaka Academy &ndash; Coming Soon</title>
+  <style>
+    /* Simple reset and typography */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+      color: #333;
+    }
 
-        h1 {
-          font-size: 2.4rem;
-          margin-bottom: 0.5rem;
-          text-align: center;
-        }
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
 
-        p {
-          max-width: 700px;
-          margin: 0 1rem 1rem;
-          font-size: 1.1rem;
-          text-align: center;
-          line-height: 1.4;
-        }
+    p {
+      max-width: 700px;
+      margin: 0 1rem 1rem;
+      font-size: 1.1rem;
+      text-align: center;
+      line-height: 1.4;
+    }
 
-        /* Game container styles */
-        #gameContainer {
-          position: relative;
-          width: 90%;
-          max-width: 600px;
-          height: 200px;
-          border: 2px solid #90caf9;
-          border-radius: 12px;
-          background-color: #ffffff;
-          overflow: hidden;
-          margin-top: 1.5rem;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
+    /* Game container styles */
+    #gameContainer {
+      position: relative;
+      width: 90%;
+      max-width: 600px;
+      height: 200px;
+      border: 2px solid #90caf9;
+      border-radius: 12px;
+      background-color: #ffffff;
+      overflow: hidden;
+      margin-top: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
 
-        #player {
-          position: absolute;
-          bottom: 0;
-          left: 50px;
-          width: 40px;
-          height: 40px;
-          border-radius: 8px;
-          background-color: #66bb6a;
-        }
+    #player {
+      position: absolute;
+      bottom: 0;
+      left: 50px;
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background-color: #66bb6a;
+    }
 
-        .obstacle {
-          position: absolute;
-          bottom: 0;
-          right: -40px;
-          width: 40px;
-          height: 40px;
-          border-radius: 6px;
-          background-color: #ef5350;
-        }
+    .obstacle {
+      position: absolute;
+      bottom: 0;
+      right: -40px;
+      width: 40px;
+      height: 40px;
+      border-radius: 6px;
+      background-color: #ef5350;
+    }
 
-        #score {
-          margin-top: 0.5rem;
-          font-weight: 600;
-        }
+    #score {
+      margin-top: 0.5rem;
+      font-weight: 600;
+    }
 
-        #instructions {
-          margin-top: 0.25rem;
-          font-size: 0.9rem;
-          color: #555;
-        }
-    </style>
+    #instructions {
+      margin-top: 0.25rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
-<h1>Janaka Academy is Coming Soon!</h1>
-<p>
+  <h1>Janaka Academy is Coming Soon!</h1>
+  <p>
     We're hard at work building something extraordinary for you. While you wait,
     enjoy this little game! Just jump over the obstacles to rack up points &ndash;
     nothing too serious, simply a playful distraction to put a smile on your
     face. Press the spacebar or tap/click inside the game area to jump.
-</p>
-<!-- Game area -->
-<div id="gameContainer" style="display: none;">
+  </p>
+  <!-- Game area -->
+  <div id="gameContainer" style="display: none;">
     <div id="player"></div>
-</div>
-<!-- Score and instructions -->
-<div id="score" style="display: none;">Score: 0</div>
-<div id="instructions" style="display: none;">Press spacebar or tap/click to jump</div>
-<!-- Start screen -->
-<div id="startScreen">
+  </div>
+  <!-- Score and instructions -->
+  <div id="score" style="display: none;">Score: 0</div>
+  <div id="instructions" style="display: none;">Press spacebar or tap/click to jump</div>
+  <!-- Start screen -->
+  <div id="startScreen">
     <button id="startButton" style="padding: 0.8rem 1.6rem; font-size: 1rem; border: none; border-radius: 8px; background-color: #42a5f5; color: #fff; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">Start Game</button>
-</div>
-<!-- Result screen -->
-<div id="resultScreen" style="display: none; flex-direction: column; align-items: center;">
+  </div>
+  <!-- Result screen -->
+  <div id="resultScreen" style="display: none; flex-direction: column; align-items: center;">
     <h2 style="margin-bottom: 0.5rem;">Game Over!</h2>
     <p id="finalScore" style="margin-bottom: 1rem;"></p>
     <div>
-        <button id="playAgainButton" style="margin-right: 0.5rem; padding: 0.6rem 1.2rem; font-size: 1rem; border: none; border-radius: 8px; background-color: #66bb6a; color: #fff; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">Play Again</button>
-        <a id="backButton" href="#" style="padding: 0.6rem 1.2rem; font-size: 1rem; border-radius: 8px; background-color: #ef5350; color: #fff; text-decoration: none; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">Go Back</a>
+      <button id="playAgainButton" style="margin-right: 0.5rem; padding: 0.6rem 1.2rem; font-size: 1rem; border: none; border-radius: 8px; background-color: #66bb6a; color: #fff; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">Play Again</button>
+      <a id="backButton" href="#" style="padding: 0.6rem 1.2rem; font-size: 1rem; border-radius: 8px; background-color: #ef5350; color: #fff; text-decoration: none; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">Go Back</a>
     </div>
-</div>
+  </div>
 
-<script>
+  <script>
     /*
       Simple endless runner game with start and result screens.
       The player jumps over moving obstacles. Score increases
@@ -251,6 +251,6 @@
 
     // Optional: Set backButton href to your desired location
     // backButton href is set in HTML; you can modify its attribute there.
-</script>
+  </script>
 </body>
 </html>
