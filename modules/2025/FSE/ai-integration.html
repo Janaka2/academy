@@ -47,21 +47,16 @@
           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        #player {
-          position: absolute;
-          bottom: 0;
-          left: 50px;
-          width: 50px;
-          height: 50px;
-          /* Remove solid background so the kangaroo emoji is prominent */
-          background-color: transparent;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          font-size: 32px;
-          /* Slight drop shadow for better visibility */
-          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-        }
+         #player {
+            position: absolute;
+            bottom: 0;
+            left: 50px;
+            width: 60px;
+            height: 60px;
+            font-size: 48px;
+            line-height: 60px; /* keeps the kangaroo centered vertically */
+            transform: scaleX(-1); /* flips the kangaroo to face forward */
+         }
 
         .obstacle {
           position: absolute;
