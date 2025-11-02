@@ -1,12 +1,12 @@
 # Janaka Academy
 
-*Empowering a new generation of engineers to surpass technical mastery with spiritual depth and ethical integrity.*
+*Empowering a new engineers to surpass technical mastery with spiritual depth and ethical integrity.*
 
 ## Vision
 
-My mission is to awaken the giant within a thousand souls—guiding each to surpass me not just in engineering skill, but in spiritual depth and ethical integrity. Together, step by step, we’ll create a tribe of leaders who innovate with compassion, live by principle, and make the world kinder and easier for everyone.
+My mission is to empower the giant within a thousand hearts — guiding each to surpass me not just in engineering skill, but in spiritual depth and ethical integrity. Together, step by step, we’ll create a elite group of technical master minds who innovate with compassion, live by principle, and make the world easier for everyone.
 
-## What We Offer
+## What We would do
 
 - Step‑by‑step learning paths: Comprehensive curriculum covering Java, Spring Boot, AI integration, and other technologies that enable you to build scalable, modern solutions.
 
@@ -18,15 +18,17 @@ My mission is to awaken the giant within a thousand souls—guiding each to surp
 
 ## Join the Mission
 
-1. Everyone is welcome! Here’s how you can participate:
+*Everyone is welcome!* 
 
-2. Star and watch this repository to stay informed about new learning materials, events, and updates.
+Here’s how you can participate:
 
-3. Fork the repo and submit pull requests with improvements, study notes, or new content. Your contributions help shape the academy.
+1. Star and watch this repository to stay informed about new learning materials, events, and updates.
 
-4. Join our community channels (Discord/Slack links will be provided) to connect with fellow learners, ask questions, and share insights.
+2. Fork the repo and submit pull requests with improvements, study notes, or new content. Your contributions help shape the academy.
 
-5. Spread the word — invite others who are eager to grow technically, spiritually, and ethically. Together we aim to empower at least 1,000 people to exceed their own expectations and serve the world.
+3. Join our community channels (Discord/Slack links will be provided) to connect with fellow learners, ask questions, and share insights.
+
+4. Spread the word — invite others who are eager to grow technically, spiritually, and ethically. Together we aim to empower at least 1,000 people to exceed their own expectations and serve the world.
 
 ## Contributing
 
