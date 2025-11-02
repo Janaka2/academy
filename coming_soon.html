@@ -1,99 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Janaka Academy &ndash; Coming Soon</title>
-    <style>
-        /* Simple reset and typography */
-        body {
-          margin: 0;
-          padding: 0;
-          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          min-height: 100vh;
-          background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
-          color: #333;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Janaka Academy &ndash; Coming Soon</title>
+  <style>
+    /* Simple reset and typography */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+      color: #333;
+    }
 
-        h1 {
-          font-size: 2.4rem;
-          margin-bottom: 0.5rem;
-          text-align: center;
-        }
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
 
-        p {
-          max-width: 700px;
-          margin: 0 1rem 1rem;
-          font-size: 1.1rem;
-          text-align: center;
-          line-height: 1.4;
-        }
+    p {
+      max-width: 700px;
+      margin: 0 1rem 1rem;
+      font-size: 1.1rem;
+      text-align: center;
+      line-height: 1.4;
+    }
 
-        /* Game container styles */
-        #gameContainer {
-          position: relative;
-          width: 90%;
-          max-width: 600px;
-          height: 200px;
-          border: 2px solid #90caf9;
-          border-radius: 12px;
-          background-color: #ffffff;
-          overflow: hidden;
-          margin-top: 1.5rem;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
+    /* Game container styles */
+    #gameContainer {
+      position: relative;
+      width: 90%;
+      max-width: 600px;
+      height: 200px;
+      border: 2px solid #90caf9;
+      border-radius: 12px;
+      background-color: #ffffff;
+      overflow: hidden;
+      margin-top: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
 
-        #player {
-          position: absolute;
-          bottom: 0;
-          left: 50px;
-          width: 40px;
-          height: 40px;
-          border-radius: 8px;
-          background-color: #66bb6a;
-        }
+    #player {
+      position: absolute;
+      bottom: 0;
+      left: 50px;
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background-color: #66bb6a;
+    }
 
-        .obstacle {
-          position: absolute;
-          bottom: 0;
-          right: -40px;
-          width: 40px;
-          height: 40px;
-          border-radius: 6px;
-          background-color: #ef5350;
-        }
+    .obstacle {
+      position: absolute;
+      bottom: 0;
+      right: -40px;
+      width: 40px;
+      height: 40px;
+      border-radius: 6px;
+      background-color: #ef5350;
+    }
 
-        #score {
-          margin-top: 0.5rem;
-          font-weight: 600;
-        }
+    #score {
+      margin-top: 0.5rem;
+      font-weight: 600;
+    }
 
-        #instructions {
-          margin-top: 0.25rem;
-          font-size: 0.9rem;
-          color: #555;
-        }
-    </style>
+    #instructions {
+      margin-top: 0.25rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
-<h1>Janaka Academy is Coming Soon!</h1>
-<p>
+  <h1>Janaka Academy is Coming Soon!</h1>
+  <p>
     We're hard at work building something extraordinary for you. While you wait,
     enjoy this little game! Just jump over the obstacles to rack up points &ndash;
     nothing too serious, simply a playful distraction to put a smile on your
     face. Press the spacebar or tap/click inside the game area to jump.
-</p>
-<div id="gameContainer">
+  </p>
+  <div id="gameContainer">
     <div id="player"></div>
-</div>
-<div id="score">Score: 0</div>
-<div id="instructions">Press spacebar or tap/click to jump</div>
+  </div>
+  <div id="score">Score: 0</div>
+  <div id="instructions">Press spacebar or tap/click to jump</div>
 
-<script>
+  <script>
     /*
       Simple endless runner game.
       The player jumps over moving obstacles. Score increases
@@ -220,6 +220,6 @@
 
     // Start on load
     startGame();
-</script>
+  </script>
 </body>
 </html>
