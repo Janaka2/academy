@@ -10,6 +10,10 @@
     <style>
         /* Tweak default link focus for accessibility */
         a:focus { outline: 2px dashed #2563eb; outline-offset: 2px; }
+        html {
+            scroll-behavior: smooth;
+        }
+
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased">
@@ -42,8 +46,8 @@
 </header>
 <!-- Fixed Academy banner -->
 <div class="fixed top-4 right-4 z-50">
-    <a href="/modules/2025/FSE/Elite-Full‑Stack-Engineering-2025-Edition.html"
-       class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-full shadow-lg hover:bg-blue-700 transition">
+    <a href="#course-catalog"
+       class="px-6 py-3 rounded-full font-semibold shadow-lg bg-blue-600 text-white hover:bg-blue-700">
         Explore Courses →
     </a>
 </div>
@@ -101,6 +105,76 @@
                 <span class="font-medium">Spread the word</span> — invite others who are eager to grow technically, spiritually, and ethically. Together we aim to empower at least 1,000 people to exceed their own expectations and serve the world.
             </li>
         </ul>
+    </section>
+    <section id="course-catalog" class="max-w-5xl mx-auto mt-16 mb-24 px-4">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-bold mb-2">Choose your path</h2>
+            <p class="text-gray-600">
+                Start where you are now – grow step by step into an elite, ethical engineer.
+            </p>
+        </div>
+
+        <!-- Optional filter bar – purely visual for now -->
+
+        <div class="flex flex-wrap gap-2 justify-center mb-6 text-sm">
+          <button class="px-3 py-1 rounded-full border bg-white">All</button>
+          <button class="px-3 py-1 rounded-full border border-gray-200 text-gray-600">
+            Full-Stack
+          </button>
+          <button class="px-3 py-1 rounded-full border border-gray-200 text-gray-600">
+            AI & Agents
+          </button>
+          <button class="px-3 py-1 rounded-full border border-gray-200 text-gray-600">
+            Leadership
+          </button>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2">
+            <!-- Course 1: Elite Full-Stack Engineering -->
+            <article class="rounded-2xl border bg-white/80 backdrop-blur shadow-sm p-6 flex flex-col">
+                <header class="mb-4">
+                    <div class="flex items-center gap-2 mb-2 text-sm text-gray-500">
+          <span class="inline-flex px-2 py-0.5 rounded-full bg-blue-50 text-blue-700">
+            2025 Edition
+          </span>
+                        <span class="inline-flex px-2 py-0.5 rounded-full bg-gray-100">
+            Advanced
+          </span>
+                    </div>
+                    <h3 class="text-xl font-semibold">
+                        Elite Full-Stack Engineering – 2025 Edition
+                    </h3>
+                </header>
+
+                <p class="text-gray-600 text-sm mb-4 flex-1">
+                    Deep, guided training in modern Java, Spring Boot, cloud, and architecture –
+                    built on ethics, mentoring, and long-term impact.
+                </p>
+
+                <dl class="text-xs text-gray-500 mb-4 flex flex-wrap gap-x-6 gap-y-2">
+                    <div>
+                        <dt class="font-semibold text-gray-700">Duration</dt>
+                        <dd>12 months · self-paced</dd>
+                    </div>
+                    <div>
+                        <dt class="font-semibold text-gray-700">For</dt>
+                        <dd>Mid–Senior Engineers</dd>
+                    </div>
+                    <div>
+                        <dt class="font-semibold text-gray-700">Format</dt>
+                        <dd>Projects · Reviews · Rituals</dd>
+                    </div>
+                </dl>
+
+                <a href="/modules/2025/FSE/Elite-Full%E2%80%91Stack-Engineering-2025-Edition.html"
+                   class="inline-flex items-center justify-center mt-auto text-sm font-semibold
+                px-4 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700">
+                    View course →
+                </a>
+            </article>
+
+            <!-- Later: add more <article> cards here for new courses -->
+        </div>
     </section>
 
     <!-- Contributing -->
