@@ -3,254 +3,228 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Janaka Academy &ndash; Coming Soon</title>
+    <title>Linux & CLI Mastery for Java Developers</title>
     <style>
-        /* Simple reset and typography */
         body {
+          font-family: Arial, sans-serif;
+          line-height: 1.6;
           margin: 0;
-          padding: 0;
-          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          min-height: 100vh;
-          background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+          padding: 0 1rem;
+          background: #f9f9f9;
           color: #333;
         }
-
-        h1 {
-          font-size: 2.4rem;
-          margin-bottom: 0.5rem;
+        header {
+          background: #24292e;
+          color: white;
+          padding: 1rem;
           text-align: center;
         }
-
-        p {
-          max-width: 700px;
-          margin: 0 1rem 1rem;
-          font-size: 1.1rem;
-          text-align: center;
-          line-height: 1.4;
+        nav {
+          background: #eee;
+          padding: 1rem;
+          margin-bottom: 1rem;
         }
-
-        /* Game container styles */
-        #gameContainer {
-          position: relative;
-          width: 90%;
-          max-width: 600px;
-          height: 200px;
-          border: 2px solid #90caf9;
-          border-radius: 12px;
-          background-color: #ffffff;
-          overflow: hidden;
+        nav a {
+          display: block;
+          color: #0366d6;
+          margin: 0.5rem 0;
+          text-decoration: none;
+        }
+        section {
+          margin-bottom: 2rem;
+          padding: 1rem;
+          background: white;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 {
+          color: #2c3e50;
+        }
+        h3 {
           margin-top: 1.5rem;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          color: #444;
         }
-
-        #player {
-          position: absolute;
-          bottom: 0;
-          left: 50px;
-          width: 40px;
-          height: 40px;
-          border-radius: 8px;
-          background-color: #66bb6a;
+        pre, code {
+          background: #f4f4f4;
+          padding: 0.5rem;
+          overflow-x: auto;
+          display: block;
+          white-space: pre-wrap;
+          border-left: 4px solid #ccc;
+          margin: 1rem 0;
         }
-
-        .obstacle {
-          position: absolute;
-          bottom: 0;
-          right: -40px;
-          width: 40px;
-          height: 40px;
-          border-radius: 6px;
-          background-color: #ef5350;
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 1rem;
         }
-
-        #score {
-          margin-top: 0.5rem;
-          font-weight: 600;
+        table, th, td {
+          border: 1px solid #ddd;
         }
-
-        #instructions {
-          margin-top: 0.25rem;
-          font-size: 0.9rem;
-          color: #555;
+        th, td {
+          padding: 0.5rem;
+          text-align: left;
+        }
+        th {
+          background: #f0f0f0;
+        }
+        ul {
+          padding-left: 1.2rem;
+        }
+        ul li {
+          margin-bottom: 0.5rem;
         }
     </style>
 </head>
 <body>
-<h1>Janaka Academy is Coming Soon!</h1>
-<p>
-    We're hard at work building something extraordinary for you. While you wait,
-    enjoy this little game! Just jump over the obstacles to rack up points &ndash;
-    nothing too serious, simply a playful distraction to put a smile on your
-    face. Press the spacebar or tap/click inside the game area to jump.
-</p>
-<!-- Game area -->
-<div id="gameContainer" style="display: none;">
-    <div id="player"></div>
-</div>
-<!-- Score and instructions -->
-<div id="score" style="display: none;">Score: 0</div>
-<div id="instructions" style="display: none;">Press spacebar or tap/click to jump</div>
-<!-- Start screen -->
-<div id="startScreen">
-    <button id="startButton" style="padding: 0.8rem 1.6rem; font-size: 1rem; border: none; border-radius: 8px; background-color: #42a5f5; color: #fff; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">Start Game</button>
-</div>
-<!-- Result screen -->
-<div id="resultScreen" style="display: none; flex-direction: column; align-items: center;">
-    <h2 style="margin-bottom: 0.5rem;">Game Over!</h2>
-    <p id="finalScore" style="margin-bottom: 1rem;"></p>
-    <div>
-        <button id="playAgainButton" style="margin-right: 0.5rem; padding: 0.6rem 1.2rem; font-size: 1rem; border: none; border-radius: 8px; background-color: #66bb6a; color: #fff; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">Play Again</button>
-        <a id="backButton" href="https://academy.janaka.me/modules/2025/FSE/Elite-Full%E2%80%91Stack-Engineering-2025-Edition.html" style="padding: 0.6rem 1.2rem; font-size: 1rem; border-radius: 8px; background-color: #ef5350; color: #fff; text-decoration: none; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">Go Back</a>
-    </div>
-</div>
+<header>
+    <h1>Essential Linux & CLI Mastery for Senior Java Engineers</h1>
+    <p>Complete Practical Guide + Cheat Sheet</p>
+</header>
+<nav>
+    <a href="#foundations">A. Foundations of Linux</a>
+    <a href="#file-ops">B. File & Directory Operations</a>
+    <a href="#search-filter">C. Search & Filtering</a>
+    <a href="#text-processing">D. Text Processing</a>
+    <a href="#processes">E. Working With Processes</a>
+    <a href="#networking">F. Networking Tools</a>
+    <a href="#permissions">G. Permissions & Users</a>
+    <a href="#bash">H. Bash Shell Essentials</a>
+    <a href="#ssh">I. SSH, SFTP & rsync</a>
+    <a href="#systemd">J. Systemd & Services</a>
+    <a href="#docker">K. Docker & Container CLI</a>
+    <a href="#git">L. Git Bash Essentials</a>
+    <a href="#cheatsheet">M. Final Cheat Sheet</a>
+    <a href="#scenarios">N. 20 Real Java Scenarios</a>
+</nav>
+<section id="foundations">
+    <h2>A. Foundations of Linux</h2>
+    <h3>Filesystem Hierarchy</h3>
+    <ul>
+        <li><strong>/etc</strong> – config files</li>
+        <li><strong>/var/log</strong> – logs</li>
+        <li><strong>/opt</strong> – optional software (great for JARs)</li>
+    </ul>
+    <h3>Paths</h3>
+    <pre><code>cd /opt/apps     # absolute path
+cd ../logs       # relative path</code></pre>
+    <h3>Navigation Commands</h3>
+    <pre><code>ls -la
+pwd
+tree -L 2</code></pre>
+</section>
+<section id="file-ops">
+    <h2>B. File & Directory Operations</h2>
+    <h3>Copy, Move, Remove</h3>
+    <pre><code>cp -rv target/*.jar /opt/apps/
+mv app.log logs/
+rm -rf temp/</code></pre>
+    <h3>Compression</h3>
+    <pre><code>tar -czvf backup.tar.gz /opt/apps/
+</code></pre>
+    <h3>Compare</h3>
+    <pre><code>diff application.yml application-prod.yml
+vimdiff settings.xml settings-dev.xml</code></pre>
+</section>
+<section id="search-filter">
+    <h2>C. Search & Filtering</h2>
+    <h3>Find Stacktraces, Configs, Keys</h3>
+    <pre><code>grep -i exception logs/app.log
+find /var -name "*.yml"
+locate application.properties
+xargs -a services.txt grep -H 'timeout'</code></pre>
+    <h3>Pipelines</h3>
+    <pre><code>cat log.txt | grep ERROR | cut -d' ' -f5- | sort | uniq -c</code></pre>
+</section>
+<section id="text-processing">
+    <h2>D. Text Processing</h2>
+    <h3>Practical Usage</h3>
+    <pre><code>cut -d":" -f1 /etc/passwd
+awk '{print $2, $5}' performance.csv
+sed 's/localhost/127.0.0.1/g' config.yml</code></pre>
+    <h3>Tail Logs Live</h3>
+    <pre><code>tail -f /var/log/spring.log | grep WARN</code></pre>
+</section>
+<section id="processes">
+    <h2>E. Working With Processes</h2>
+    <h3>List and Kill</h3>
+    <pre><code>ps aux | grep java
+kill -9 &lt;PID&gt;
+lsof -i :8080</code></pre>
+</section>
+<section id="networking">
+    <h2>F. Networking Tools</h2>
+    <h3>API Testing</h3>
+    <pre><code>curl -X POST http://localhost:8080/api -d '{"test":true}'
+wget https://repo.maven.org/artifact.jar</code></pre>
+    <h3>Ports & DNS</h3>
+    <pre><code>netstat -tulnp
+ping google.com
+traceroute github.com</code></pre>
+</section>
+<section id="permissions">
+    <h2>G. Permissions & Users</h2>
+    <pre><code>chmod +x deploy.sh
+chown appuser:app logs/
+sudo ./restart.sh</code></pre>
+</section>
+<section id="bash">
+    <h2>H. Bash Shell Essentials</h2>
+    <pre><code>alias mvnclean='mvn clean install'
+export JAVA_HOME=/opt/jdk
+export PATH=$JAVA_HOME/bin:$PATH
+echo $PATH</code></pre>
+</section>
+<section id="ssh">
+    <h2>I. SSH, SFTP & rsync</h2>
+    <pre><code>ssh user@server
+scp build/libs/app.jar user@server:/opt/apps
+rsync -avz /var/log/ user@host:/data/logs</code></pre>
+</section>
+<section id="systemd">
+    <h2>J. Systemd & Services</h2>
+    <pre><code>sudo systemctl start spring-app
+sudo systemctl stop spring-app
+journalctl -u spring-app -f</code></pre>
+</section>
+<section id="docker">
+    <h2>K. Docker & Container CLI</h2>
+    <pre><code>docker ps
+docker logs container
+docker exec -it container bash
+docker inspect container
+</code></pre>
+</section>
+<section id="git">
+    <h2>L. Git Bash Essentials</h2>
+    <pre><code>git log --oneline
+git diff
 
-<script>
-    /*
-      Simple endless runner game with start and result screens.
-      The player jumps over moving obstacles. Score increases
-      over time. When the player hits an obstacle, a result panel
-      is displayed instead of using alert boxes.
-    */
-    const gameContainer = document.getElementById('gameContainer');
-    const player = document.getElementById('player');
-    const scoreDisplay = document.getElementById('score');
-    const instructions = document.getElementById('instructions');
-    const startScreen = document.getElementById('startScreen');
-    const startButton = document.getElementById('startButton');
-    const resultScreen = document.getElementById('resultScreen');
-    const finalScoreEl = document.getElementById('finalScore');
-    const playAgainButton = document.getElementById('playAgainButton');
-
-    let obstacles = [];
-    let isJumping = false;
-    let jumpVelocity = 0;
-    const gravity = 0.6;
-    let playerY = 0;
-    let score = 0;
-    let gameLoopInterval;
-    let obstacleInterval;
-    let gameActive = false;
-
-    function startGame() {
-      gameActive = true;
-      // Show game elements
-      gameContainer.style.display = 'block';
-      scoreDisplay.style.display = 'block';
-      instructions.style.display = 'block';
-      // Hide start and result screens
-      startScreen.style.display = 'none';
-      resultScreen.style.display = 'none';
-      // Reset state
-      obstacles.forEach((o) => gameContainer.removeChild(o));
-      obstacles = [];
-      isJumping = false;
-      jumpVelocity = 0;
-      playerY = 0;
-      score = 0;
-      player.style.bottom = '0px';
-      scoreDisplay.innerText = 'Score: 0';
-      clearInterval(gameLoopInterval);
-      clearInterval(obstacleInterval);
-      gameLoopInterval = setInterval(gameLoop, 20);
-      obstacleInterval = setInterval(createObstacle, 1500);
-    }
-
-    function createObstacle() {
-      const obs = document.createElement('div');
-      obs.classList.add('obstacle');
-      const size = 20 + Math.random() * 20;
-      obs.style.width = size + 'px';
-      obs.style.height = size + 'px';
-      obs.style.right = '-40px';
-      gameContainer.appendChild(obs);
-      obstacles.push(obs);
-    }
-
-    function jump() {
-      if (!gameActive) return;
-      if (!isJumping && playerY === 0) {
-        isJumping = true;
-        jumpVelocity = 11;
-      }
-    }
-
-    function gameLoop() {
-      // Player jump physics
-      if (isJumping) {
-        playerY += jumpVelocity;
-        jumpVelocity -= gravity;
-        if (playerY <= 0) {
-          playerY = 0;
-          isJumping = false;
-        }
-        player.style.bottom = playerY + 'px';
-      }
-      // Move obstacles and check for collisions
-      for (let i = 0; i < obstacles.length; i++) {
-        const obs = obstacles[i];
-        const currentRight = parseFloat(obs.style.right);
-        obs.style.right = currentRight + 4 + 'px';
-        if (currentRight > gameContainer.offsetWidth + 50) {
-          gameContainer.removeChild(obs);
-          obstacles.splice(i, 1);
-          i--;
-          continue;
-        }
-        const playerRect = player.getBoundingClientRect();
-        const obsRect = obs.getBoundingClientRect();
-        if (
-          playerRect.right > obsRect.left &&
-          playerRect.left < obsRect.right &&
-          playerRect.bottom > obsRect.top &&
-          playerRect.top < obsRect.bottom
-        ) {
-          endGame();
-          return;
-        }
-      }
-      score++;
-      scoreDisplay.innerText = 'Score: ' + score;
-    }
-
-    function endGame() {
-      gameActive = false;
-      clearInterval(gameLoopInterval);
-      clearInterval(obstacleInterval);
-      // Hide game area elements
-      gameContainer.style.display = 'none';
-      scoreDisplay.style.display = 'none';
-      instructions.style.display = 'none';
-      // Show result screen with score
-      finalScoreEl.innerText = 'Your score: ' + score;
-      resultScreen.style.display = 'flex';
-    }
-
-    // Event listeners
-    document.addEventListener('keydown', (e) => {
-      if (e.code === 'Space') {
-        jump();
-      }
-    });
-    gameContainer.addEventListener('click', () => {
-      jump();
-    });
-    gameContainer.addEventListener('touchstart', (e) => {
-      e.preventDefault();
-      jump();
-    });
-    startButton.addEventListener('click', () => {
-      startGame();
-    });
-    playAgainButton.addEventListener('click', () => {
-      startGame();
-    });
-
-    // Optional: Set backButton href to your desired location
-    // backButton href is set in HTML; you can modify its attribute there.
-</script>
+git stash
+git checkout -b feature-x
+git mergetool</code></pre>
+</section>
+<section id="cheatsheet">
+    <h2>M. Final Cheat Sheet</h2>
+    <table>
+        <tr><th>Command</th><th>Purpose</th><th>Example</th></tr>
+        <tr><td>lsof -i :8080</td><td>Check which PID uses port</td><td>lsof -i :8080</td></tr>
+        <tr><td>tail -f app.log | grep ERROR</td><td>Live error logs</td><td>tail -f /var/log/app.log</td></tr>
+        <tr><td>find / -name "*.jar"</td><td>Find all JARs</td><td>find /opt -name "*.jar"</td></tr>
+    </table>
+</section>
+<section id="scenarios">
+    <h2>N. 20 Real Java Scenarios</h2>
+    <ul>
+        <li>Find what’s using port 8080 → <code>lsof -i :8080</code></li>
+        <li>Tail Spring logs live → <code>tail -f spring.log</code></li>
+        <li>Search huge log without loading → <code>grep Exception big.log</code></li>
+        <li>Copy logs between servers → <code>rsync -avz /logs user@host:/backup</code></li>
+        <li>Kill hung Spring app → <code>pkill -f spring</code></li>
+        <li>Check memory usage → <code>free -h</code></li>
+        <li>View running containers → <code>docker ps</code></li>
+        <li>View CPU usage → <code>top</code></li>
+    </ul>
+</section>
 </body>
 </html>
